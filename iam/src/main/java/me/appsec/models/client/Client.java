@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 import me.appsec.models.RootEntity;
+import org.hibernate.envers.Audited;
 
 
 @Entity
@@ -14,6 +15,7 @@ import me.appsec.models.RootEntity;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name="clients")
+@Audited
 public class Client implements RootEntity<Short> {
 
     /** Technical Identifier. */

@@ -4,12 +4,14 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import me.appsec.models.RootEntity;
+import org.hibernate.envers.Audited;
 
 import java.security.Principal;
 
 @Entity
 @Getter
 @Setter
+@Audited
 @Table(name = "users")
 public class User implements RootEntity<Long>,Principal {
     @Id

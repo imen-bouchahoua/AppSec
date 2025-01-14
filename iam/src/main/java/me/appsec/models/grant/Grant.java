@@ -6,10 +6,11 @@ import lombok.Setter;
 import me.appsec.models.RootEntity;
 import me.appsec.models.client.Client;
 import me.appsec.models.user.User;
-
+import org.hibernate.envers.Audited;
 import java.time.LocalDateTime;
 
 @Entity
+@Audited
 @Table(name = "issued_grants")
 @Getter
 @Setter
