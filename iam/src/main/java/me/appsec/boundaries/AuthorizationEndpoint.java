@@ -2,7 +2,6 @@ package me.appsec.boundaries;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
-import jakarta.persistence.NoResultException;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.*;
 import me.appsec.repositories.IAMRepository;
@@ -10,7 +9,6 @@ import me.appsec.security.authorizationCode.AuthorizationCode;
 import me.appsec.models.grant.Grant;
 import me.appsec.models.user.User;
 import me.appsec.security.Argon2Utility;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
@@ -20,7 +18,6 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.logging.Logger;
-
 
 @Path("/")
 @RequestScoped
@@ -40,13 +37,13 @@ public class AuthorizationEndpoint {
         return "Hello word!";
     }
 
-    @POST
-    @Path("/password")
-    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public String generatePassword(@FormParam("password")String password) {
-            char[] clientHashChars = password.toCharArray();
-            return Argon2Utility.hash(clientHashChars);
-    }
+//    @POST
+//    @Path("/password")
+//    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+//    public String generatePassword(@FormParam("password")String password) {
+//            char[] clientHashChars = password.toCharArray();
+//            return Argon2Utility.hash(clientHashChars);
+//    }
 
     @Path("/authorize")
     @Produces(MediaType.TEXT_HTML)
@@ -138,7 +135,6 @@ public class AuthorizationEndpoint {
         String requestedScopes = cookie.getValue().split("#")[1].split("\\$")[0];
 
         try{
-
             Optional<User> optionalUser = iamRepository.findUserByUsername(username);
             if (optionalUser.isPresent()) {
                 User user = optionalUser.get();
@@ -160,17 +156,8 @@ public class AuthorizationEndpoint {
                                 params.getFirst("state")
                         );
                         logger.info("Redirecting to: " + redirectedURI);
-                        //                return Response.seeOther(UriBuilder.fromUri(redirectedURI).build()).build();
                         return Response.ok(redirectedURI).build();
                     } else {
-                        //                StreamingOutput stream = output -> {
-                        //                    try (InputStream is = getClass().getResourceAsStream("/consent.html")) {
-                        //                        Objects.requireNonNull(is, "Resource not found: /consent.html");
-                        //                        String content = new String(is.readAllBytes(), StandardCharsets.UTF_8);
-                        //                        String updatedContent = content.replace("{{username}}", URLEncoder.encode(username, StandardCharsets.UTF_8));
-                        //                        output.write(updatedContent.getBytes(StandardCharsets.UTF_8));
-                        //                    }
-                        //                };
                         String consentPageUrl = uriInfo.getBaseUri()
                                 + "consent?username=" + URLEncoder.encode(username, StandardCharsets.UTF_8)
                                 + "&response_type=" + params.getFirst("response_type")
@@ -178,8 +165,6 @@ public class AuthorizationEndpoint {
                                 + "&state=" + params.getFirst("state");
                         return Response.ok(consentPageUrl).build();
                     }
-
-
                 } else {
                     logger.info("Failure when authenticating identity: " + username);
                     return Response.status(Response.Status.FORBIDDEN) // Code 403

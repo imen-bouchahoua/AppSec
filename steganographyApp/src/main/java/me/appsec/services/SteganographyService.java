@@ -18,7 +18,6 @@ public class SteganographyService {
 
         int[] messageBits = convertStringToBits(message);
         int[] pixelPositions = getPixelPositions(secretKey, messageBits.length);
-        //System.out.println(Arrays.toString(pixelPositions));
         embedMessageBits(theImage, messageBits, pixelPositions);
 
         return convertImageToByteArray(theImage);
@@ -26,7 +25,6 @@ public class SteganographyService {
     public String extractMessage(BufferedImage theImage, String secretKey) {
         int messageLength = extractMessageLength(theImage);
         int[] pixelPositions = getPixelPositions(secretKey, messageLength * 8);
-        //System.out.println(Arrays.toString(pixelPositions));
         String messageBits = extractMessageBits(theImage, pixelPositions);
 
         return convertBitsToString(messageBits);

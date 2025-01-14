@@ -14,7 +14,6 @@ import jakarta.ws.rs.ext.Provider;
 import jakarta.annotation.Priority;
 import org.eclipse.microprofile.config.Config;
 import org.eclipse.microprofile.config.ConfigProvider;
-
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import java.io.StringReader;
@@ -27,7 +26,6 @@ import java.util.Arrays;
 public class AuthenticationFilter implements ContainerRequestFilter {
     private static final Config config = ConfigProvider.getConfig();
     private static final String REALM = config.getValue("jwt.realm",String.class);
-
     private static final String CLAIM_ROLES = config.getValue("jwt.claim.roles",String.class);
     private static final String AUTHENTICATION_SCHEME = "Bearer";
 
@@ -83,8 +81,6 @@ public class AuthenticationFilter implements ContainerRequestFilter {
         }
     }
 
-
-
     private boolean IsTokenBasedAuthorization(String authorizationHeader) {
         return authorizationHeader != null && authorizationHeader.toLowerCase().startsWith(AUTHENTICATION_SCHEME.toLowerCase()+" ");
     }
@@ -95,7 +91,6 @@ public class AuthenticationFilter implements ContainerRequestFilter {
                 Response.status(Response.Status.UNAUTHORIZED)
                         .header(HttpHeaders.WWW_AUTHENTICATE,AUTHENTICATION_SCHEME+ "realm=\"" + REALM + "\"")
                         .build());
-
     }
 
 }

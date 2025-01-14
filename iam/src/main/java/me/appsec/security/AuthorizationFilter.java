@@ -12,16 +12,13 @@ import jakarta.ws.rs.container.ResourceInfo;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.Provider;
-
 import java.lang.reflect.Method;
-
 
 @Provider
 @Priority(Priorities.AUTHORIZATION)
 public class AuthorizationFilter implements ContainerRequestFilter {
     @Context
     private ResourceInfo resourceInfo;
-
     @Override
     public void filter(ContainerRequestContext requestContext){
         Method method = resourceInfo.getResourceMethod();
@@ -56,9 +53,7 @@ public class AuthorizationFilter implements ContainerRequestFilter {
         if (resourceInfo.getResourceClass().isAnnotationPresent(DenyAll.class)) {
             refuseRequest();
         }
-
         // Authorization is not required for non-annotated methods
-
     }
     /*
      * Perform authorization based on roles.

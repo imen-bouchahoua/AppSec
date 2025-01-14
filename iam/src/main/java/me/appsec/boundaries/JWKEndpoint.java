@@ -12,7 +12,6 @@ import me.appsec.security.JwtManager;
 @Path("/jwk")
 @ApplicationScoped
 public class JWKEndpoint {
-
     @EJB
     private JwtManager jwtManager;
     @GET

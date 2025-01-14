@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 import me.appsec.models.RootEntity;
 import org.hibernate.envers.Audited;
-
 import java.security.Principal;
 
 @Entity
@@ -29,8 +28,6 @@ public class User implements RootEntity<Long>,Principal {
 
     @Column(name = "provided_scopes",nullable = false)
     private String providedScopes;
-
-
     @Override
     public String getName() {
         return username;

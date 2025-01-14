@@ -9,8 +9,6 @@ import me.appsec.models.grant.Grant;
 import me.appsec.models.grant.GrantPK;
 import me.appsec.models.user.Role;
 import me.appsec.models.user.User;
-
-
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.List;
@@ -52,7 +50,6 @@ public class IAMRepository {
             return Optional.empty();
         }
     }
-
     public String[] getRoles(String username) {
         var query = entityManager.createQuery("select u.roles from User u where u.username=:username", Long.class);
         query.setParameter("username", username);
@@ -117,5 +114,4 @@ public class IAMRepository {
             return Optional.empty();
         }
     }
-
 }

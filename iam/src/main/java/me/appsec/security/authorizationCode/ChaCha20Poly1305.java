@@ -3,8 +3,6 @@ package me.appsec.security.authorizationCode;
 import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
 import java.nio.ByteBuffer;
-import javax.crypto.spec.GCMParameterSpec;
-
 import java.security.SecureRandom;
 
 public class ChaCha20Poly1305 {
@@ -48,7 +46,6 @@ public class ChaCha20Poly1305 {
 
         // decrypted text
         byte[] output = cipher.doFinal(encryptedText);
-
         return output;
     }
 

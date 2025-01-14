@@ -1,7 +1,6 @@
 import { generateAuthorizationUrl } from "./utils.js";
 
 
-
 const accessToken = localStorage.getItem("access_token");
 const contentWithToken = document.getElementById("contentWithToken");
 const contentWithoutToken = document.getElementById("contentWithoutToken");
@@ -115,7 +114,6 @@ document.getElementById("extractForm").addEventListener("submit", function (even
     }
 });
 
-
 if (accessToken) {
     buttonDiv.innerHTML = `Access Token = ${accessToken}`;
 
@@ -137,8 +135,6 @@ if (accessToken) {
 }
 else {
     contentWithoutToken.style.display = "block";
-    // 1. Access token is not present - Redirect the user to authorization server for login
-    // and authorizing application
     generateAuthorizationUrl()
         .then(authorizationUrl => {
             buttonDiv.addEventListener('click', () => {
@@ -148,5 +144,4 @@ else {
         .catch(error => {
             console.error('Error during access token generation: ', error);
         });
-
 }

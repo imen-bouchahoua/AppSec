@@ -134,7 +134,6 @@
             background: #e3b04b;
             color: #fff;
         }
-
         .loader {
             display: block;
             --height-of-loader: 4px;
@@ -146,7 +145,6 @@
             background-color: rgba(0,0,0,0.2);
             position: relative;
         }
-
         .loader::before {
             content: "";
             position: absolute;
@@ -159,7 +157,6 @@
             animation: moving 1s ease-in-out infinite;
         ;
         }
-
         @keyframes moving {
             50% {
                 width: 100%;
@@ -171,10 +168,8 @@
                 left: unset;
             }
         }
-
     </style>
     <script>
-
         function parseQueryString(string) {
             if(string === "") { return {}; }
             var segments = string.split("&").map(s => s.split("=") );
@@ -330,16 +325,7 @@
                                     Authenticate
                                 </button>
                             </div>
-
                         </form>
-<!--                        <div id="spinner" style="display: none">-->
-<!--                            <svg class="pl" width="240" height="240" viewBox="0 0 240 240">-->
-<!--                                <circle class="pl__ring pl__ring&#45;&#45;a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>-->
-<!--                                <circle class="pl__ring pl__ring&#45;&#45;b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>-->
-<!--                                <circle class="pl__ring pl__ring&#45;&#45;c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>-->
-<!--                                <circle class="pl__ring pl__ring&#45;&#45;d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>-->
-<!--                            </svg>-->
-<!--                        </div>-->
                         <div id="spinner" class="loader" style="display: none"></div>
                         <p id="error-message" style="color: red; display: none; margin-top: 1%;"></p>
                     </div>

@@ -30,6 +30,7 @@ public class SteganographyController {
     public String helloWord(){
         return "Hello word!";
     }
+
     @POST
     @Path("/hide")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
@@ -56,6 +57,7 @@ public class SteganographyController {
                 .header("Content-Disposition", "attachment; filename=hidden_message_image.png")
                 .build();
     }
+
     @POST
     @Path("/extract")
     @Consumes(MediaType.MULTIPART_FORM_DATA)

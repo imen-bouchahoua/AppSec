@@ -20,7 +20,6 @@ if (!state || state !== localStorage.getItem('state')) {
 
 //errorDiv.innerHTML = `Code = ${code} -- State = ${state}`;
 
-
 const fetchAccessToken = async () => {
     const accessTokenUrl = generateAccessTokenUrl();
     const urlSearchParams = new URLSearchParams({
@@ -40,7 +39,6 @@ const fetchAccessToken = async () => {
     console.log(tokenResponse)
     return tokenResponse;
 };
-
 
 if (!code) {
     errorDiv.innerHTML = 'Code is not present.';
@@ -70,4 +68,3 @@ else {
       });
     
 }
-  

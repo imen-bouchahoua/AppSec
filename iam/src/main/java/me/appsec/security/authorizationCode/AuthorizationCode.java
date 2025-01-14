@@ -1,8 +1,5 @@
 package me.appsec.security.authorizationCode;
 
-
-import jakarta.inject.Inject;
-
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
@@ -10,7 +7,6 @@ import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
 import java.util.Base64;
 import java.util.UUID;
-import java.util.logging.Logger;
 
 public record AuthorizationCode(
         String clientId,
@@ -18,9 +14,6 @@ public record AuthorizationCode(
         String approvedScopes,
         Long expirationDate,
         String redirectUri){
-
-
-
     private static final SecretKey key;
     private static final String codePrefix = "urn:secugate:code:";
 
@@ -64,7 +57,6 @@ public record AuthorizationCode(
         if (attributes.length != 7) {
             throw new IllegalArgumentException("Invalid payload structure." + payload);
         }
-
         // Construction de l'objet AuthorizationCode
         return new AuthorizationCode(
                 attributes[0],
@@ -74,5 +66,4 @@ public record AuthorizationCode(
                 attributes[4]+":"+attributes[5]+":"+attributes[6]
         );
     }
-
 }

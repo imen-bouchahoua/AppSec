@@ -1,12 +1,9 @@
 package me.appsec.models.client;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 import me.appsec.models.RootEntity;
 import org.hibernate.envers.Audited;
-
 
 @Entity
 @Getter
@@ -51,5 +48,4 @@ public class Client implements RootEntity<Short> {
     public void setID(Short id) {
         this.id=id;
     }
-
 }

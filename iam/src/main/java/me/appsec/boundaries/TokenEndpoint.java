@@ -12,8 +12,6 @@ import me.appsec.security.authorizationCode.AuthorizationCode;
 import me.appsec.security.JwtManager;
 import jakarta.json.JsonString;
 import org.eclipse.microprofile.config.ConfigProvider;
-
-
 import java.io.StringReader;
 import java.security.GeneralSecurityException;
 import java.util.Set;
@@ -56,7 +54,6 @@ public class TokenEndpoint {
                     var refreshClientId = previousRefreshToken.get("client_id");
                     var refreshScopes = previousRefreshToken.get("scope");
                     var refreshSubject = previousRefreshToken.get("sub");
-
 
                     var accessToken = jwtManager.generateToken(clientId, subject, scopes, roles);
                     var refreshToken = jwtManager.generateToken(clientId, subject, scopes, new String[]{"refresh_role"});
@@ -112,13 +109,8 @@ public class TokenEndpoint {
         catch (Exception e) {
                 throw new RuntimeException(e);
         }
-//        catch (Exception e) {
-//            logger.info("An error occurred while processing the request :"+ e);
-//            return responseError("Invalid_request", "Can't get token", Response.Status.INTERNAL_SERVER_ERROR);
-//        }
+
     }
-
-
 
     private Response responseError (String error, String errorDescription, Response.Status status){
         JsonObject errorResponse = Json.createObjectBuilder()

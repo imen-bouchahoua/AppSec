@@ -7,17 +7,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-
 import org.eclipse.microprofile.config.ConfigProvider;
 
 
 public enum Role {
-
     GUEST(0L),
     R_P00(1L),
     R_P01(1L<<1L),
     ROOT(Long.MAX_VALUE);
-
     private final long value;
 
     /** constructor */
@@ -58,5 +55,4 @@ public enum Role {
     public static Role byId(String id){
         return byIds.get(id);
     }
-
 }

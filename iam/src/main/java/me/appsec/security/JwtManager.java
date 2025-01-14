@@ -6,7 +6,6 @@ import jakarta.ejb.Singleton;
 import jakarta.ejb.Startup;
 import jakarta.json.Json;
 import jakarta.json.JsonObject;
-
 import java.io.StringReader;
 import java.nio.charset.StandardCharsets;
 import java.security.*;
@@ -17,7 +16,6 @@ import java.util.*;
 @Singleton
 @LocalBean
 public class JwtManager implements me.appsec.JwtManager {
-
     private final static String curve = "Ed25519";
     private final static KeyPairGenerator keyPairGenerator;
     private final static Signature signatureAlgorithm;
@@ -38,7 +36,6 @@ public class JwtManager implements me.appsec.JwtManager {
     private  final Set<String> audiences = Set.of("urn:me.appsecarmi.www","urn:appsecarmi.admin");
     private String issuer = "urn:me.appsecmi.iam";
 
-
     private void generateKeyPair(){
         var kid = UUID.randomUUID().toString();
         keyPairExpires.put(kid, Instant.now().getEpochSecond()+keyPairLifeTime);
@@ -51,8 +48,6 @@ public class JwtManager implements me.appsec.JwtManager {
         }
         return cachedKeyPair.entrySet().stream().filter(e -> privateKeyHasNotExpired(e.getKey())).findAny();
     }
-
-
     private boolean isPublicKeyExpired(String kid) {
         return Instant.now().getEpochSecond() > (keyPairExpires.get(kid)+jwtLifeTime);
     }
@@ -142,7 +137,6 @@ public class JwtManager implements me.appsec.JwtManager {
         } catch (SignatureException | InvalidKeyException e) {
             throw new EJBException(e);
         }
-
     }
     @Override
     public JsonObject getPublicKeyAsJWK(String kid) {
