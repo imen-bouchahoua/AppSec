@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SecuGate - Grant Consent</title>
+        <link rel="icon"
+              href="data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KDTwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIFRyYW5zZm9ybWVkIGJ5OiBTVkcgUmVwbyBNaXhlciBUb29scyAtLT4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjI1NnB4IiBoZWlnaHQ9IjI1NnB4IiBmaWxsPSIjMDAwMDAwIj4KDTxnIGlkPSJTVkdSZXBvX2JnQ2FycmllciIgc3Ryb2tlLXdpZHRoPSIwIi8+Cg08ZyBpZD0iU1ZHUmVwb190cmFjZXJDYXJyaWVyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KDTxnIGlkPSJTVkdSZXBvX2ljb25DYXJyaWVyIj4gPHJlY3QgeD0iNjQiIHk9IjgwIiBzdHlsZT0iZmlsbDojRkZGRkZGOyIgd2lkdGg9IjM4NCIgaGVpZ2h0PSIyNDAiLz4gPHBhdGggc3R5bGU9ImZpbGw6I0RDRERERTsiIGQ9Ik0yNjQsMTEydjc3LjY4OEMzMDUuNTkyLDIxNS45OTIsMzc2LDIxNiwzNzYsMjE2djcyaDQwVjExMkgyNjR6Ii8+IDxwYXRoIHN0eWxlPSJmaWxsOiNlM2IwNGI7IiBkPSJNMTM2LDM4NFYyMTZjMCwwLDgwLjIzMiwwLDEyMC0zMmMzOS43NiwzMS45OTIsMTIwLDMyLDEyMCwzMnYxNjhjMCw0NS44MjQtMzUuMDk2LDk1LjMxMi0xMjAsMTIwIEMxNzEuMTA0LDQ3OS4zMTIsMTM2LDQyOS44MjQsMTM2LDM4NHoiLz4gPHJlY3QgeD0iNTYiIHk9IjgiIHN0eWxlPSJmaWxsOiNGMzcwNTM7IiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjY0Ii8+IDxnPiA8cmVjdCB4PSI4MCIgeT0iMzIiIHN0eWxlPSJmaWxsOiMwQzM4NDc7IiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiLz4gPHJlY3QgeD0iMTEyIiB5PSIzMiIgc3R5bGU9ImZpbGw6IzBDMzg0NzsiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIvPiA8cmVjdCB4PSI4OCIgeT0iMTA0IiBzdHlsZT0iZmlsbDojMEMzODQ3OyIgd2lkdGg9IjEzNiIgaGVpZ2h0PSIxNiIvPiA8cmVjdCB4PSI4OCIgeT0iMTM2IiBzdHlsZT0iZmlsbDojMEMzODQ3OyIgd2lkdGg9IjEzNiIgaGVpZ2h0PSIxNiIvPiA8cmVjdCB4PSIxNDQiIHk9IjMyIiBzdHlsZT0iZmlsbDojMEMzODQ3OyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ii8+IDwvZz4gPHJlY3QgeD0iMTc2IiB5PSIzMiIgc3R5bGU9ImZpbGw6I0ZGRkZGRjsiIHdpZHRoPSIyNTYiIGhlaWdodD0iMTYiLz4gPGc+IDxwYXRoIHN0eWxlPSJmaWxsOiMwQzM4NDc7IiBkPSJNMzg0LDMzNmg4MFYwSDQ4djMzNmg4MHY0OGMwLDU3LjA0OCw0Ny4wMTYsMTA0LjQ0OCwxMjUuNzY4LDEyNy4zNTJMMjU2LDUxMmwyLjIzMi0wLjY0OCBDMzM2Ljk4NCw0ODguNDQ4LDM4NCw0NDEuMDQ4LDM4NCwzODRWMzM2eiBNMzg0LDIwOC4wMDhMMzc2LDIwOGMtMC43MDQsMC02NC41NjgtMC40MTYtMTA0LTIyLjk1MlYxMjBoMTM2djE2MGgtMjRWMjA4LjAwOHogTTQ0OCwxNnY0OEg2NFYxNkg0NDh6IE02NCwzMjBWODBoMzg0djI0MGgtNjR2LTI0aDQwVjEwNEgyNTZ2NjkuNzM2bC01LjAxNiw0LjAzMkMyMTMuOTEyLDIwNy42LDEzNi43NzYsMjA4LDEzNiwyMDhsLTgsMC4wMDggVjIzMkg4OHYxNmg0MHYxNkg4OHYxNmg0MHY0MEg2NHogTTM2OCwzODRjMCw0OS4wMDgtNDEuODE2LDkwLjMwNC0xMTIsMTExLjMyOEMxODUuODE2LDQ3NC4zMDQsMTQ0LDQzMy4wMDgsMTQ0LDM4NFYyMjMuOCBjMjAuODMyLTAuODY0LDc3LjA0LTUuNDcyLDExMi0yOS44MTZjMzQuOTYsMjQuMzM2LDkxLjE2OCwyOC45NDQsMTEyLDI5LjgxNlYzODR6Ii8+IDxwYXRoIHN0eWxlPSJmaWxsOiMwQzM4NDc7IiBkPSJNMjA4LDMwNHYxNmgtMTZ2MTA0aDEyOFYzMjBoLTE2di0xNmMwLTI2LjQ3Mi0yMS41MjgtNDgtNDgtNDhTMjA4LDI3Ny41MjgsMjA4LDMwNHogTTMwNCw0MDhoLTk2IHYtNzJoOTZWNDA4eiBNMjg4LDMwNHYxNmgtNjR2LTE2YzAtMTcuNjQ4LDE0LjM1Mi0zMiwzMi0zMlMyODgsMjg2LjM1MiwyODgsMzA0eiIvPiA8cmVjdCB4PSI0MDAiIHk9IjQwMCIgc3R5bGU9ImZpbGw6IzBDMzg0NzsiIHdpZHRoPSI4MCIgaGVpZ2h0PSIxNiIvPiA8cmVjdCB4PSIzODQiIHk9IjQzMiIgc3R5bGU9ImZpbGw6IzBDMzg0NzsiIHdpZHRoPSI1NiIgaGVpZ2h0PSIxNiIvPiA8cmVjdCB4PSIzNjAiIHk9IjQ2NCIgc3R5bGU9ImZpbGw6IzBDMzg0NzsiIHdpZHRoPSI0MCIgaGVpZ2h0PSIxNiIvPiA8cmVjdCB4PSIzMiIgeT0iNDAwIiBzdHlsZT0iZmlsbDojMEMzODQ3OyIgd2lkdGg9IjgwIiBoZWlnaHQ9IjE2Ii8+IDxyZWN0IHg9IjcyIiB5PSI0MzIiIHN0eWxlPSJmaWxsOiMwQzM4NDc7IiB3aWR0aD0iNTYiIGhlaWdodD0iMTYiLz4gPHJlY3QgeD0iMTEyIiB5PSI0NjQiIHN0eWxlPSJmaWxsOiMwQzM4NDc7IiB3aWR0aD0iNDAiIGhlaWdodD0iMTYiLz4gPC9nPiA8cmVjdCB4PSIyMDgiIHk9IjMzNiIgc3R5bGU9ImZpbGw6I0ZGRkZGRjsiIHdpZHRoPSI5NiIgaGVpZ2h0PSI3MiIvPiA8cmVjdCB4PSIyNTYiIHk9IjMzNiIgc3R5bGU9ImZpbGw6I0RDRERERTsiIHdpZHRoPSI0OCIgaGVpZ2h0PSI3MiIvPiA8cmVjdCB4PSIyNDgiIHk9IjM1MiIgc3R5bGU9ImZpbGw6IzBDMzg0NzsiIHdpZHRoPSIxNiIgaGVpZ2h0PSIzNiIvPiA8L2c+Cg08L3N2Zz4="
+              sizes="64x64" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" integrity="sha256-x3YZWtRjM8bJqf48dFAv/qmgL68SI4jqNWeSLMZaMGA=" crossorigin="anonymous"></script>
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+        <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+        <style>
+            body {
+                font-family: "Lato", Arial, sans-serif;
+                font-size: 16px;
+                line-height: 1.8;
+                font-weight: normal;
+                background: #f8f9fd;
+                color: rgb(128, 128, 128);
+            }
+            .ftco-section {
+                padding: 5em 0;
+            }
+            .wrap {
+                width: 100%;
+                overflow: hidden;
+                background: #fff;
+                border-radius: 5px;
+                -webkit-box-shadow: 0 10px 34px -15px rgba(0, 0, 0, 0.24);
+                -moz-box-shadow: 0 10px 34px -15px rgba(0, 0, 0, 0.24);
+                box-shadow: 0 10px 34px -15px rgba(0, 0, 0, 0.24); }
+            .consent-wrap {
+                width: 100%;
+            }
+            @media (max-width: 1024px) {
+                .consent-wrap {
+                    width: 100%; }
+            }
+
+            h2, h3{
+                line-height: 1.5;
+                font-weight: 400;
+                font-family: "Lato", Arial, sans-serif;
+                color: #000;
+            }
+            .form-control {
+                height: 48px;
+                background: #fff;
+                color: #000;
+                font-size: 16px;
+                border-radius: 5px;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            .btn {
+                cursor: pointer;
+                -webkit-box-shadow: none !important;
+                box-shadow: none !important;
+                font-size: 15px;
+                padding: 10px 20px; }
+            .btn:hover, .btn:active, .btn:focus {
+                outline: none; }
+            .btn.btn-primary {
+                background: #e3b04b !important;
+                border: 1px solid #e3b04b !important;
+                color: #fff !important; }
+            .btn.btn-primary:hover {
+                border: 1px solid #e3b04b !important;
+                background: transparent !important;
+                color: #e3b04b!important; }
+            .checkbox-wrap {
+                display:inline;
+                position: relative;
+                padding-left: 30px;
+                margin-bottom: 12px;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: 500;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+        </style>
+
+    </head>
+    <body>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">SecuGate - Grant Consent</h2>
+                </div>
+
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-5">
+                    <div class="wrap d-md-flex">
+                        <div class="consent-wrap p-4 p-md-5">
+                            <div class="d-flex">
+                                <div class="w-100">
+                                    <p class="mb-4">Hello <span id="username-display">{{username}}</span>, An OAuth 2.0 client is requesting your permission</p>
+                                </div>
+                            </div>
+
+                            <form id="consent-form">
+                                <div class="mb-3">
+                                    <label for="scopes" class="form-label">Select Scopes:</label>
+                                    <div id="scopes">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="approved_scope" value="read" id="scope-read">
+                                            <label class="form-check-label" for="scope-read">Read Access</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="approved_scope" value="write" id="scope-write">
+                                            <label class="form-check-label" for="scope-write">Write Access</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="approved_scope" value="delete" id="scope-delete">
+                                            <label class="form-check-label" for="scope-delete">Delete Access</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkbox-wrap">
+                                    <input class="checkmark" type="radio" name="approval_status" id="inlineRadio1" value="YES">
+                                    <label class="form-check-label" for="inlineRadio1">Approve</label>
+                                </div>
+                                <div class="checkbox-wrap">
+                                    <input class="checkmark" type="radio" name="approval_status" id="inlineRadio2" value="NO">
+                                    <label class="form-check-label" for="inlineRadio2">Decline</label>
+                                </div>
+                                <div class="pt-3">
+                                    <input type="button" class="form-control btn btn-primary rounded submit px-3" value="Continue" id="submit-consent">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById("submit-consent").addEventListener("click", function () {
+            const formData = new FormData(document.getElementById("consent-form"));
+            const formParams = new URLSearchParams();
+
+            const selectedScopes = [];
+            document.querySelectorAll('input[name="approved_scope"]:checked').forEach(function (checkbox) {
+                selectedScopes.push(checkbox.value);
+            });
+            const scopesString = selectedScopes.join(" ");
+
+            formParams.append("approved_scope", scopesString);
+
+            formData.forEach((value, key) => {
+                if (key !== "approved_scope") {
+                    formParams.append(key, value);
+                }
+            });
+
+            const username = document.getElementById("username-display").textContent;
+            formParams.append("username", username);
+
+            const currentUrl = window.location.href;
+            formParams.append("frontend_url", currentUrl);
+
+            fetch('/login/authorization', {
+                method: 'PATCH',
+                body: formParams
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text(); // Lire la réponse comme un texte
+                })
+                .then(redirectedURI => {
+                    if (redirectedURI) {
+                        window.location.href = redirectedURI; // Redirection manuelle
+                    } else {
+                        console.error("No redirected URI found in the response.");
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+        });
+    </script>
+    </body>
+</html>

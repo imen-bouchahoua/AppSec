@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web xmlns="http://www.jboss.com/xml/ns/javaee" version="7.2">
+    <context-root>/</context-root>
+    <virtual-host>api-host</virtual-host>
+    <enable-websockets>true</enable-websockets>
+</jboss-web>

@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SecuGate - Sign In</title>
+    <link rel="icon"
+          href="data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KDTwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIFRyYW5zZm9ybWVkIGJ5OiBTVkcgUmVwbyBNaXhlciBUb29scyAtLT4KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjI1NnB4IiBoZWlnaHQ9IjI1NnB4IiBmaWxsPSIjMDAwMDAwIj4KDTxnIGlkPSJTVkdSZXBvX2JnQ2FycmllciIgc3Ryb2tlLXdpZHRoPSIwIi8+Cg08ZyBpZD0iU1ZHUmVwb190cmFjZXJDYXJyaWVyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KDTxnIGlkPSJTVkdSZXBvX2ljb25DYXJyaWVyIj4gPHJlY3QgeD0iNjQiIHk9IjgwIiBzdHlsZT0iZmlsbDojRkZGRkZGOyIgd2lkdGg9IjM4NCIgaGVpZ2h0PSIyNDAiLz4gPHBhdGggc3R5bGU9ImZpbGw6I0RDRERERTsiIGQ9Ik0yNjQsMTEydjc3LjY4OEMzMDUuNTkyLDIxNS45OTIsMzc2LDIxNiwzNzYsMjE2djcyaDQwVjExMkgyNjR6Ii8+IDxwYXRoIHN0eWxlPSJmaWxsOiNlM2IwNGI7IiBkPSJNMTM2LDM4NFYyMTZjMCwwLDgwLjIzMiwwLDEyMC0zMmMzOS43NiwzMS45OTIsMTIwLDMyLDEyMCwzMnYxNjhjMCw0NS44MjQtMzUuMDk2LDk1LjMxMi0xMjAsMTIwIEMxNzEuMTA0LDQ3OS4zMTIsMTM2LDQyOS44MjQsMTM2LDM4NHoiLz4gPHJlY3QgeD0iNTYiIHk9IjgiIHN0eWxlPSJmaWxsOiNGMzcwNTM7IiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjY0Ii8+IDxnPiA8cmVjdCB4PSI4MCIgeT0iMzIiIHN0eWxlPSJmaWxsOiMwQzM4NDc7IiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiLz4gPHJlY3QgeD0iMTEyIiB5PSIzMiIgc3R5bGU9ImZpbGw6IzBDMzg0NzsiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIvPiA8cmVjdCB4PSI4OCIgeT0iMTA0IiBzdHlsZT0iZmlsbDojMEMzODQ3OyIgd2lkdGg9IjEzNiIgaGVpZ2h0PSIxNiIvPiA8cmVjdCB4PSI4OCIgeT0iMTM2IiBzdHlsZT0iZmlsbDojMEMzODQ3OyIgd2lkdGg9IjEzNiIgaGVpZ2h0PSIxNiIvPiA8cmVjdCB4PSIxNDQiIHk9IjMyIiBzdHlsZT0iZmlsbDojMEMzODQ3OyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ii8+IDwvZz4gPHJlY3QgeD0iMTc2IiB5PSIzMiIgc3R5bGU9ImZpbGw6I0ZGRkZGRjsiIHdpZHRoPSIyNTYiIGhlaWdodD0iMTYiLz4gPGc+IDxwYXRoIHN0eWxlPSJmaWxsOiMwQzM4NDc7IiBkPSJNMzg0LDMzNmg4MFYwSDQ4djMzNmg4MHY0OGMwLDU3LjA0OCw0Ny4wMTYsMTA0LjQ0OCwxMjUuNzY4LDEyNy4zNTJMMjU2LDUxMmwyLjIzMi0wLjY0OCBDMzM2Ljk4NCw0ODguNDQ4LDM4NCw0NDEuMDQ4LDM4NCwzODRWMzM2eiBNMzg0LDIwOC4wMDhMMzc2LDIwOGMtMC43MDQsMC02NC41NjgtMC40MTYtMTA0LTIyLjk1MlYxMjBoMTM2djE2MGgtMjRWMjA4LjAwOHogTTQ0OCwxNnY0OEg2NFYxNkg0NDh6IE02NCwzMjBWODBoMzg0djI0MGgtNjR2LTI0aDQwVjEwNEgyNTZ2NjkuNzM2bC01LjAxNiw0LjAzMkMyMTMuOTEyLDIwNy42LDEzNi43NzYsMjA4LDEzNiwyMDhsLTgsMC4wMDggVjIzMkg4OHYxNmg0MHYxNkg4OHYxNmg0MHY0MEg2NHogTTM2OCwzODRjMCw0OS4wMDgtNDEuODE2LDkwLjMwNC0xMTIsMTExLjMyOEMxODUuODE2LDQ3NC4zMDQsMTQ0LDQzMy4wMDgsMTQ0LDM4NFYyMjMuOCBjMjAuODMyLTAuODY0LDc3LjA0LTUuNDcyLDExMi0yOS44MTZjMzQuOTYsMjQuMzM2LDkxLjE2OCwyOC45NDQsMTEyLDI5LjgxNlYzODR6Ii8+IDxwYXRoIHN0eWxlPSJmaWxsOiMwQzM4NDc7IiBkPSJNMjA4LDMwNHYxNmgtMTZ2MTA0aDEyOFYzMjBoLTE2di0xNmMwLTI2LjQ3Mi0yMS41MjgtNDgtNDgtNDhTMjA4LDI3Ny41MjgsMjA4LDMwNHogTTMwNCw0MDhoLTk2IHYtNzJoOTZWNDA4eiBNMjg4LDMwNHYxNmgtNjR2LTE2YzAtMTcuNjQ4LDE0LjM1Mi0zMiwzMi0zMlMyODgsMjg2LjM1MiwyODgsMzA0eiIvPiA8cmVjdCB4PSI0MDAiIHk9IjQwMCIgc3R5bGU9ImZpbGw6IzBDMzg0NzsiIHdpZHRoPSI4MCIgaGVpZ2h0PSIxNiIvPiA8cmVjdCB4PSIzODQiIHk9IjQzMiIgc3R5bGU9ImZpbGw6IzBDMzg0NzsiIHdpZHRoPSI1NiIgaGVpZ2h0PSIxNiIvPiA8cmVjdCB4PSIzNjAiIHk9IjQ2NCIgc3R5bGU9ImZpbGw6IzBDMzg0NzsiIHdpZHRoPSI0MCIgaGVpZ2h0PSIxNiIvPiA8cmVjdCB4PSIzMiIgeT0iNDAwIiBzdHlsZT0iZmlsbDojMEMzODQ3OyIgd2lkdGg9IjgwIiBoZWlnaHQ9IjE2Ii8+IDxyZWN0IHg9IjcyIiB5PSI0MzIiIHN0eWxlPSJmaWxsOiMwQzM4NDc7IiB3aWR0aD0iNTYiIGhlaWdodD0iMTYiLz4gPHJlY3QgeD0iMTEyIiB5PSI0NjQiIHN0eWxlPSJmaWxsOiMwQzM4NDc7IiB3aWR0aD0iNDAiIGhlaWdodD0iMTYiLz4gPC9nPiA8cmVjdCB4PSIyMDgiIHk9IjMzNiIgc3R5bGU9ImZpbGw6I0ZGRkZGRjsiIHdpZHRoPSI5NiIgaGVpZ2h0PSI3MiIvPiA8cmVjdCB4PSIyNTYiIHk9IjMzNiIgc3R5bGU9ImZpbGw6I0RDRERERTsiIHdpZHRoPSI0OCIgaGVpZ2h0PSI3MiIvPiA8cmVjdCB4PSIyNDgiIHk9IjM1MiIgc3R5bGU9ImZpbGw6IzBDMzg0NzsiIHdpZHRoPSIxNiIgaGVpZ2h0PSIzNiIvPiA8L2c+Cg08L3N2Zz4="
+          sizes="64x64" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: "Lato", Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: normal;
+            background: #f8f9fd;
+            color: rgb(128, 128, 128);
+        }
+        a {
+            -webkit-transition: .3s all ease;
+            -o-transition: .3s all ease;
+            transition: .3s all ease;
+            color: #e3b04b; }
+        a:hover, a:focus {
+            text-decoration: none !important;
+            outline: none !important;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        h1, h2, h3, h4, h5, h6{
+            line-height: 1.5;
+            font-weight: 400;
+            font-family: "Lato", Arial, sans-serif;
+            color: #000;
+        }
+        .ftco-section {
+            padding: 5em 0;
+        }
+        .wrap {
+            width: 100%;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 5px;
+            -webkit-box-shadow: 0 10px 34px -15px rgba(0, 0, 0, 0.24);
+            -moz-box-shadow: 0 10px 34px -15px rgba(0, 0, 0, 0.24);
+            box-shadow: 0 10px 34px -15px rgba(0, 0, 0, 0.24);
+        }
+        .login-wrap {
+            width: 100%;
+        }
+        @media (max-width: 1024px) {
+            .login-wrap {
+                width: 100%; }
+        }
+        .login-wrap {
+            position: relative;
+            background: #fff;
+            background-font-weight: 300;
+        }
+        .form-group {
+            position: relative;
+        }
+        .form-group .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #000;
+            font-weight: 700;
+        }
+        .form-group a {
+            color: rgb(128, 128, 128);
+        }
+        .form-control {
+            height: 48px;
+            background: #fff;
+            color: #000;
+            font-size: 16px;
+            border-radius: 5px;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .form-control::-webkit-input-placeholder {
+            /* Chrome/Opera/Safari */
+            color: rgba(0, 0, 0, 0.2) !important;
+        }
+        .form-control::-moz-placeholder {
+            /* Firefox 19+ */
+            color: rgba(0, 0, 0, 0.2) !important;
+        }
+        .form-control:-ms-input-placeholder {
+            /* IE 10+ */
+            color: rgba(0, 0, 0, 0.2) !important;
+        }
+        .form-control:-moz-placeholder {
+            /* Firefox 18- */
+            color: rgba(0, 0, 0, 0.2) !important;
+        }
+        .form-control:focus, .form-control:active {
+            outline: none !important;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border: 1px solid #e3b04b;
+        }
+
+        .btn {
+            cursor: pointer;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            font-size: 15px;
+            padding: 10px 20px;
+        }
+        .btn:hover, .btn:active, .btn:focus {
+            outline: none;
+        }
+        .btn.btn-primary {
+            background: #e3b04b !important;
+            border: 1px solid #e3b04b !important;
+            color: #fff !important;
+        }
+        .btn.btn-primary:hover {
+            border: 1px solid #e3b04b !important;
+            background: transparent !important;
+            color: #e3b04b!important;
+        }
+        .btn.btn-primary {
+            border: 1px solid #e3b04b;
+            background: transparent;
+            color: #e3b04b;
+        }
+        .btn.btn-primary{
+            border: 1px solid transparent;
+            background: #e3b04b;
+            color: #fff;
+        }
+
+        .loader {
+            display: block;
+            --height-of-loader: 4px;
+            --loader-color: #e3b04b;
+            margin-top: 1%;
+            width: 100%;
+            height: var(--height-of-loader);
+            border-radius: 30px;
+            background-color: rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .loader::before {
+            content: "";
+            position: absolute;
+            background: var(--loader-color);
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            border-radius: 30px;
+            animation: moving 1s ease-in-out infinite;
+        ;
+        }
+
+        @keyframes moving {
+            50% {
+                width: 100%;
+            }
+
+            100% {
+                width: 0;
+                right: 0;
+                left: unset;
+            }
+        }
+
+    </style>
+    <script>
+
+        function parseQueryString(string) {
+            if(string === "") { return {}; }
+            var segments = string.split("&").map(s => s.split("=") );
+            var queryString = {};
+            segments.forEach(s => queryString[s[0]] = s[1]);
+            return queryString;
+        }
+        function base64ArrayBuffer(arrayBuffer) {
+            let base64    = '';
+            const encodings = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+
+            let bytes         = new Uint8Array(arrayBuffer);
+            let byteLength    = bytes.byteLength;
+            let byteRemainder = byteLength % 3;
+            let mainLength    = byteLength - byteRemainder;
+
+            let a, b, c, d;
+            let chunk;
+
+            // Main loop deals with bytes in chunks of 3
+            for (let i = 0; i < mainLength; i = i + 3) {
+                // Combine the three bytes into a single integer
+                chunk = (bytes[i] << 16) | (bytes[i + 1] << 8) | bytes[i + 2];
+
+                // Use bitmasks to extract 6-bit segments from the triplet
+                a = (chunk & 16515072) >> 18; // 16515072 = (2^6 - 1) << 18
+                b = (chunk & 258048)   >> 12; // 258048   = (2^6 - 1) << 12
+                c = (chunk & 4032)     >>  6; // 4032     = (2^6 - 1) << 6
+                d = chunk & 63;               // 63       = 2^6 - 1
+
+                // Convert the raw binary segments to the appropriate ASCII encoding
+                base64 += encodings[a] + encodings[b] + encodings[c] + encodings[d];
+            }
+
+            // Deal with the remaining bytes and padding
+            if (byteRemainder === 1) {
+                chunk = bytes[mainLength];
+
+                a = (chunk & 252) >> 2; // 252 = (2^6 - 1) << 2
+
+                // Set the 4 least significant bits to zero
+                b = (chunk & 3)   << 4; // 3   = 2^2 - 1
+
+                base64 += encodings[a] + encodings[b] + '==';
+            } else if (byteRemainder === 2) {
+                chunk = (bytes[mainLength] << 8) | bytes[mainLength + 1];
+
+                a = (chunk & 64512) >> 10; // 64512 = (2^6 - 1) << 10
+                b = (chunk & 1008)  >>  4; // 1008  = (2^6 - 1) << 4
+
+                // Set the 2 least significant bits to zero
+                c = (chunk & 15)    <<  2; // 15    = 2^4 - 1
+
+                base64 += encodings[a] + encodings[b] + encodings[c] + '=';
+            }
+
+            return base64;
+        }
+
+
+        /**
+         * Use SHA-384: 384 bits = 48 bytes = 64 chars in Base64
+         * @param username The username associated with the password
+         * @param password The password for which we need to increase entropy
+         * @returns {Promise<ArrayBuffer>}
+         */
+        function increaseEntropy(username,password) {
+            const encoder = new window.TextEncoder();
+            const data = encoder.encode(username+"@secugate.xyz:"+password);
+            return window.crypto.subtle.digest("SHA-384", data).then((hash)=>{
+                return base64ArrayBuffer(hash);
+            }).catch((error)=>{
+                console.log(error);
+            });
+        }
+
+        async function signIn(e){
+            const spinner = document.getElementById("spinner");
+            e.preventDefault();
+            let loginForm = document.getElementById('signInForm');
+            let payload = new FormData(loginForm);
+            let pwd = await increaseEntropy(payload.get('username'),payload.get('password'));
+            payload.set('password',pwd);
+            let	myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+            let options = {
+                method: 'POST',
+                headers: myHeaders,
+                mode: 'cors',
+                cache: 'no-cache',
+                credentials: 'same-origin',
+                redirect: 'follow',
+                body: new URLSearchParams(payload)
+            };
+            spinner.style.display = "flex";
+            spinner.style.justifyContent= "center";
+            fetch(`${loginForm.action}`, options)
+                .then(response => {
+                    setTimeout(() => {
+                        spinner.style.display = "none";
+                    }, 1000);
+                    if (!response.ok) {
+                        const errorMessage = document.getElementById("error-message");
+                        //alert("username ou mot de passe incorrect !")
+                        errorMessage.textContent = "Incorrect username or password !";
+                        setTimeout(() => {
+                            errorMessage.style.display = "block"; // Affichez le message
+                        }, 1000);
+                        return;
+                    }
+                    return response.text();
+                })
+                .then(redirectedURI => {
+                    if (redirectedURI) {
+                        window.location.href = redirectedURI;
+                    } else {
+                        console.error("No redirected URI found in the response.");
+                    }
+                })
+                .catch(err => console.error("Fetch error:", err));
+        }
+    </script>
+</head>
+<body>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-5">
+                <h2 class="heading-section">SecuGate - Sign In</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-5">
+                <div class="wrap d-md-flex">
+                    <div class="login-wrap p-4 p-md-5">
+                        <div class="d-flex">
+                            <div class="w-100">
+                                <h3 class="mb-4">Sign In</h3>
+                            </div>
+                        </div>
+                        <form method="post" action="login/authorization" class="signin-form needs-validation" id="signInForm" novalidate>
+                            <div class="form-group mb-3">
+                                <label class="label" for="username">Username</label>
+                                <input name="username" id="username" type="text" class="form-control" placeholder="Username" required="required"/>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="password">Password</label>
+                                <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <button id="modeButton" type="submit" class="form-control btn btn-primary rounded submit px-3">
+                                    <div class="dots_border"></div>
+                                    Authenticate
+                                </button>
+                            </div>
+
+                        </form>
+<!--                        <div id="spinner" style="display: none">-->
+<!--                            <svg class="pl" width="240" height="240" viewBox="0 0 240 240">-->
+<!--                                <circle class="pl__ring pl__ring&#45;&#45;a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>-->
+<!--                                <circle class="pl__ring pl__ring&#45;&#45;b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>-->
+<!--                                <circle class="pl__ring pl__ring&#45;&#45;c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>-->
+<!--                                <circle class="pl__ring pl__ring&#45;&#45;d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>-->
+<!--                            </svg>-->
+<!--                        </div>-->
+                        <div id="spinner" class="loader" style="display: none"></div>
+                        <p id="error-message" style="color: red; display: none; margin-top: 1%;"></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    let q = parseQueryString(window.location.search.substring(1));
+    let loginForm = document.getElementById('signInForm');
+    let base = loginForm.getAttribute("action");
+    loginForm.setAttribute("action",base+"?response_type="+q.response_type+"&code_challenge="+q.code_challenge+"&state="+q.state);
+    loginForm.addEventListener('submit',signIn);
+</script>
+</body>
+</html>

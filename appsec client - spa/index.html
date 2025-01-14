@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steganography AppSec</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <style> 
+        .custom-spinner {
+            width: 20px;  
+            height: 20px;
+        }
+        /* From Uiverse.io by zjssun */ 
+        .button {
+            position: relative;
+            padding: 10px 22px;
+            border-radius: 6px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            background-color: #0D6EFD;
+            transition: all 0.2s ease;
+        }
+    
+        .button:active {
+            transform: scale(0.96);
+        }
+    
+        .button:before,
+        .button:after {
+            position: absolute;
+            content: "";
+            width: 150%;
+            left: 50%;
+            height: 100%;
+            transform: translateX(-50%);
+            z-index: -1000;
+            background-repeat: no-repeat;
+        }
+    
+        .button:hover:before {
+            top: -70%;
+            background-image: radial-gradient(circle, #0D6EFD 20%, transparent 20%),
+            radial-gradient(circle, transparent 20%, #0D6EFD 20%, transparent 30%),
+            radial-gradient(circle, #0D6EFD 20%, transparent 20%),
+            radial-gradient(circle, #0D6EFD 20%, transparent 20%),
+            radial-gradient(circle, transparent 10%, #0D6EFD 15%, transparent 20%),
+            radial-gradient(circle, #0D6EFD 20%, transparent 20%),
+            radial-gradient(circle, #0D6EFD 20%, transparent 20%),
+            radial-gradient(circle, #0D6EFD 20%, transparent 20%),
+            radial-gradient(circle, #0D6EFD 20%, transparent 20%);
+            background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+            10% 10%, 18% 18%;
+            background-position: 50% 120%;
+            animation: greentopBubbles 0.6s ease;
+        }
+        
+        @keyframes greentopBubbles {
+            0% {
+            background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+                40% 90%, 55% 90%, 70% 90%;
+            }
+        
+            50% {
+            background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+                50% 50%, 65% 20%, 90% 30%;
+            }
+        
+            100% {
+            background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+                50% 40%, 65% 10%, 90% 20%;
+            background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+            }
+        }
+        
+        .button:hover::after {
+            bottom: -70%;
+            background-image: radial-gradient(circle, #0D6EFD 20%, transparent 20%),
+            radial-gradient(circle, #0D6EFD 20%, transparent 20%),
+            radial-gradient(circle, transparent 10%, #0D6EFD 15%, transparent 20%),
+            radial-gradient(circle, #0D6EFD 20%, transparent 20%),
+            radial-gradient(circle, #0D6EFD 20%, transparent 20%),
+            radial-gradient(circle, #0D6EFD 20%, transparent 20%),
+            radial-gradient(circle, #0D6EFD 20%, transparent 20%);
+            background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+            background-position: 50% 0%;
+            animation: greenbottomBubbles 0.6s ease;
+        }
+        
+        @keyframes greenbottomBubbles {
+            0% {
+            background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+                70% -10%, 70% 0%;
+            }
+        
+            50% {
+            background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+                105% 0%;
+            }
+        
+            100% {
+            background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+                110% 10%;
+            background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+            }
+            }
+    </style>
+</head>
+
+<body class="overflow-hidden">
+    <div class="container vh-100 d-flex align-items-center justify-content-center pt-5">
+        <div class="row w-100">
+            <div class="col-md-6 mx-auto">
+                <div>
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-5">Steganography AppSec</h1>
+                </div>
+                <div>
+                    <p class="display-5 col-md-12 fs-4">Unlock the power of hidden communication with our Steganography AppSec tool!<br>
+                    Seamlessly hide your text within an image or reveal hidden messages with just a few clicks.
+                    </p>
+                    <p class="col-md-12 fs-6 text-muted">
+                        Our tool supports JPEG, JPG, and PNG formats for image-based steganography.
+                    </p>
+                    <p class="col-md-12 fs-5 text-muted">
+                        Start your journey into digital secrecy today!
+                    </p>
+                </div>
+                <button id="buttonDiv"class="button">
+                    Connect your account
+                </button>
+                <button id="disconnectDiv"class="button" style="display: none">
+                    Disconnect!
+                </button>
+            </div>
+
+            <div id="contentWithToken" class="col-md-6 mx-auto" style="height: 60vh;display: none;">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                            data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+                            aria-selected="true">Hide</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                            data-bs-target="#profile-tab-pane" type="button" role="tab"
+                            aria-controls="profile-tab-pane" aria-selected="false">Extract</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                        tabindex="0">
+                        <div class="my-3">
+                        <form id="hideForm" class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="encodeimage1" class="form-label">Input image</label>
+                                <input type="file" class="form-control" id="encodeimage1" required>
+                                <div class="invalid-feedback">
+                                    Please add an image.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="secretText" class="form-label">Secret text</label>
+                                <textarea class="form-control" id="secretText" rows="2"
+                                    placeholder="Please write your secret text here"  maxlength="255"  required></textarea>
+                                <div class="invalid-feedback">
+                                    The secret text is required.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="secretKey1" class="form-label">Secret key</label>
+                                    <input type="password" 
+                                        class="form-control" 
+                                        id="secretKey1" 
+                                        placeholder="Please write your secret key here" 
+                                        required 
+                                        style="height: auto; padding: 10px; resize: vertical;">
+                                <div class="invalid-feedback">
+                                    The secret key is required.
+                                </div>
+                            </div>
+
+                            <button id="encodebtn" type="submit" class="btn btn-outline-primary">
+                                <div class="d-flex align-items-center">
+                                    Hide
+                                    <span id="spinnerHide" class="spinner-border custom-spinner ms-2" role="status" style="display: none;">
+                                    </span>
+                                </div>
+                            </button>
+                        </div>
+                    </form>
+                    </div>
+                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                        tabindex="0">
+                        <div class="my-3">
+                        <form id="extractForm" class="needs-validation" novalidate accept-charset="UTF-8">
+                            <div class="mb-3">
+                                <label for="decodeimage2" class="form-label">Input image</label>
+                                <input type="file" class="form-control" id="decodeimage2" required>
+                                <div class="invalid-feedback">
+                                    Please add an image.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="secretKey2" class="form-label">Secret key</label>
+                                <input type="password" 
+                                    class="form-control" 
+                                    id="secretKey2" 
+                                    placeholder="Please write your secret key here" 
+                                    required 
+                                    style="height: auto; padding: 10px; resize: vertical;">
+                                <div class="invalid-feedback">
+                                    The secret key is required.
+                                </div>
+                            </div>
+                            <button id="decodebtn" type="submit" class="btn btn-outline-primary">
+                                <div class="d-flex align-items-center">
+                                    Extract
+                                    <span  id="spinnerExtract" class="spinner-border custom-spinner ms-2" role="status" style="display: none;">
+                                    </span>
+                                </div>
+                            </button>
+                            <div class="card mt-3">
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label for="decodedText" class="form-label">Extracted Secret Text</label>
+                                        <textarea class="form-control" id="decodedText" rows="2"
+                                            placeholder="Decoded secret will appear here" readonly></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="contentWithoutToken" class="col-6 d-none d-xl-block" style="display: none;">
+                <img src="assets/images/image.png" style="height: 500px; width: 800px">
+            </div> 
+        </div>
+    </div>
+    <script type="module" src="assets/js/main.js"></script>
+</body>
+
+</html>
